@@ -45,6 +45,13 @@ function move() {
   }
 }
 // Event Handler
-
+const TitleEl = welcImg[0].nextSibling;
+function border() {
+  TitleEl.style.border = "5px solid red";
+  TitleEl.style.color = "blue";
+}
+TitleEl.addEventListener("click", border);
 
 // Event Listener
+
+export default { border };
