@@ -50,8 +50,36 @@ function border() {
   TitleEl.style.border = "5px solid red";
   TitleEl.style.color = "blue";
 }
-TitleEl.addEventListener("click", border);
 
 // Event Listener
+TitleEl.addEventListener("click", border);
 
-export default { border };
+// Image Slider
+const images = [
+  "https://images.unsplash.com/photo-1496277016162-7ca4da89c94d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+  "https://images.unsplash.com/photo-1561888416-4dba58c7170f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
+  "https://images.unsplash.com/photo-1556764025-e8e74bddc284?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+]
+
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const carousel = document.getElementById("slider");
+let posCar = 0;
+carousel.src = images[posCar];
+console.log(nextBtn);
+prevBtn.addEventListener("click", prev);
+nextBtn.addEventListener("click", next);
+function next() {
+  posCar += 1;
+  if (posCar >= images.length) {
+    posCar = 0;
+  }
+  carousel.src = images[posCar];
+}
+function prev() {
+  posCar -= 1;
+  if (posCar <= images.length) {
+    posCar = 0;
+  }
+  carousel.src = images[posCar];
+}
