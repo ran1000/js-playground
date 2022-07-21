@@ -178,3 +178,12 @@ footer a {
   background-color: black;
   z-index: -3;
 }
+
+.night-pointer {
+  position: absolute;
+  background: radial-gradient(circle, rgba(131, 58, 180, 1) 16%, rgba(125, 29, 253, 1) 30%, rgba(122, 143, 254, 1) 58%, rgba(255, 255, 255, 0) 90%);
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  z-Index: -2;
+}

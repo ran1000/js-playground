@@ -136,26 +136,26 @@ const banner = document.getElementById("js-slider").children[0];
 const link = document.getElementById("js-slider");
 link.onclick = (e) => {
   e.preventDefault();
-}
+};
+
+const spotLight = document.createElement("div");
 
 function handleNightMode() {
+  // Handles page colour.
   domRoot.parentElement.classList.toggle("night-mode");
-  // domRoot.children[0].classList.toggle("night-mode");
-  console.log(domRoot.children[0]);
-  const spotLight = document.createElement("div");
-  spotLight.style.position = "absolute";
-  spotLight.style.background = "radial-gradient(circle, rgba(131,58,180,1) 16%, rgba(125,29,253,1) 30%, rgba(122,143,254,1) 58%, rgba(255,255,255,0) 90%)";
-  spotLight.style.borderRadius = "50%";
-  spotLight.style.height = "200px";
-  spotLight.style.width = "200px";
-  spotLight.style.zIndex = "-2";
-  domRoot.appendChild(spotLight);
-
-  const spotPos = (e) => {
-    spotLight.style.left = e.pageX - 100 + 'px';
-    spotLight.style.top = e.pageY - 100 + 'px';
+  // Handles the pointer.
+  if (spotLight.classList.contains("night-pointer")) {
+    domRoot.removeChild(spotLight);
+    spotLight.classList.toggle("night-pointer");
+  } else {
+    domRoot.appendChild(spotLight);
+    spotLight.classList.toggle("night-pointer");
+    const spotPos = (e) => {
+      spotLight.style.left = e.pageX - 100 + 'px';
+      spotLight.style.top = e.pageY - 100 + 'px';
+    };
+    document.addEventListener("mousemove", spotPos);
   }
-  document.addEventListener("mousemove", spotPos);
 }
 
-banner.addEventListener("click", handleNightMode, false);
+banner.addEventListener("click", handleNightMode);
