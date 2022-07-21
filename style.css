@@ -7,7 +7,7 @@
 header {
   position: fixed;
   width: 100vw;
-  background-color: white;
+  /* background-color: white; */
   z-index: 3;
 }
 
@@ -85,6 +85,8 @@ footer a {
   overflow-x: hidden;
   position: absolute;
   top: 175px;
+  /* column-count: 2;
+  column-gap: 0px; */
 }
 
 .content-grid {
@@ -170,4 +172,9 @@ footer a {
   border: 3px solid black;
   height: 40%;
   margin-bottom: 6px;
+}
+
+.night-mode {
+  background-color: black;
+  z-index: -3;
 }
