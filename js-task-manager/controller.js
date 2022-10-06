@@ -1,6 +1,6 @@
 import Task from "./task"
 
-class Controller {
+export default class Controller {
 
   constructor(repository, view) {
     this.repository = repository;

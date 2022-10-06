@@ -1,4 +1,4 @@
-class Repository {
+export default class Repository {
   constructor() {
     this.tasks = [];
   };

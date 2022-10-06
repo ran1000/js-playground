@@ -1,4 +1,4 @@
-class View {
+export default class View {
   askFor(item) {
     prompt(`What is the ${item}`);
   };
