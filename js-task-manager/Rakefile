@@ -1,5 +1,5 @@
 task :eslint do
-  system "/usr/local/lib/node_modules/.bin/eslint js-task-manager/*.js"
+  system "./node_modules/.bin/eslint js-task-manager/*.js"
 end
 
 # task :mocha do
