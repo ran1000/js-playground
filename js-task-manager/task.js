@@ -1,4 +1,4 @@
-export default class Task {
+class Task {
   constructor(description) {
     this.description = description;
     this.completed = false;
@@ -9,6 +9,4 @@ export default class Task {
   }
 }
 
-// const par = "The key to understand it all.";
-// const a = new Task(par);
-// console.log(a);
+module.exports = Task;

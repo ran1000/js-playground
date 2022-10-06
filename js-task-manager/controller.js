@@ -1,29 +1,29 @@
-import Task from "./task"
+const Task = require("./task");
 
-export default class Controller {
-
-  constructor(repository, view) {
+class Controller {
+  constructor(view, repository) {
     this.repository = repository;
     this.view = view;
-  };
+  }
 
   createTask() {
-    const description = this.view.askUser("task");
+    const description = this.view.askFor("task");
     const task = new Task(description);
     this.repository.addTask(task);
-  };
+  }
 
   listTasks() {
     const tasks = this.repository.allTasks();
     this.view.display(tasks);
-  };
+  }
 
   markAsComplete() {
-    listTasks();
-    const taskIndex = this.view.askUser("index");
+    this.listTasks();
+    const taskIndex = this.view.askFor("index");
     const task = this.repository.find(taskIndex);
     task.isCompleted();
-    listTasks();
-  };
+    this.listTasks();
+  }
+}
 
-};
+module.exports = Controller;

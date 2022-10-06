@@ -1,4 +1,7 @@
-export default class View {
+const prompt = require('prompt');
+prompt.start();
+
+class View {
   askFor(item) {
     prompt(`What is the ${item}`);
   };
@@ -8,3 +11,5 @@ export default class View {
     });
   };
 }
+
+module.exports = View;

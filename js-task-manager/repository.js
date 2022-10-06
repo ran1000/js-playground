@@ -1,4 +1,4 @@
-export default class Repository {
+class Repository {
   constructor() {
     this.tasks = [];
   };
@@ -16,5 +16,4 @@ export default class Repository {
   };
 }
 
-// const rep = new Repository();
-// console.log(rep);
+module.exports = Repository;
