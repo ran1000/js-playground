@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>22</title>
 </head>
 
@@ -24,14 +25,26 @@
       placeat? Ducimus natus, nobis quasi, quae, repellendus nostrum neque molestiae cum dolorum ullam facilis aut?
       Laudantium, architecto soluta quidem obcaecati inventore provident perferendis voluptatibus ex quas dolorum eius
       facilis nihil eum natus ipsum necessitatibus nobis ipsa corrupti, ad sequi unde ipsam. Sapiente vero iusto minus.
-      Eos est hic dolorem magni corporis officia, aperiam adipisci recusandae sed quod ea delectus quas, ullam fugiat
+      Eos est hic <a href="">dolorem magni </a>corporis officia, aperiam adipisci recusandae sed quod ea delectus quas,
+      ullam fugiat
       cumque nam iure commodi obcaecati nemo voluptates in distinctio? Ea laboriosam suscipit possimus.
       Cum ipsa, officiis aut distinctio modi quia dolor ut voluptates velit magni error unde ex rerum corrupti! Nam,
       sit? Iste porro molestiae tempore dignissimos soluta numquam nam repellendus a aspernatur!</p>
   </div>
 
   <script>
+    const triggers = document.querySelectorAll("a");
+    const highlight = document.createElement("span");
+    highlight.classList.add("highlight");
+    document.body.appendChild(highlight);
 
+    const highlightLink = (() => {
+      console.dir(this);
+      const linkCoords = this.getBoundingClientRect();
+      console.log(linkCoords);
+    })
+
+    triggers.forEach(a => a.addEventListener("mouseenter", highlightLink))
   </script>
 
 </body>
