@@ -9,7 +9,8 @@
 </head>
 
 <body>
-  <h2>Update CSS Variables and JS</h2>
+  <h2>Update CSS Variables and <span class="title-js">JS</span></h2>
+
   <div class="controls">
     <label for="spacing">Spacing:</label>
     <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
@@ -24,6 +25,12 @@
     src="https://images.unsplash.com/photo-1557180295-76eee20ae8aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80">
 
   <style>
+    :root {
+      --base: green;
+      --spacing: 30px;
+      --blur: 10px;
+    }
+
     body {
       text-align: center;
       background: darkblue;
@@ -43,12 +50,19 @@
 
     img {
       width: 80vw;
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .title-js {
+      color: var(--base);
     }
 
   </style>
 
   <script>
-
+    const inputs = document.querySelectorAll(".controls input");
   </script>
 </body>
 
