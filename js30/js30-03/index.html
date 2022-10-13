@@ -62,7 +62,20 @@
   </style>
 
   <script>
+    // The node list has methods, visible in the console
     const inputs = document.querySelectorAll(".controls input");
+
+    // This will not work because the variable is connected to a nameless callback function
+    // "this" will refeer to the wrong scope
+    // const handleUpdate = () => {
+    //   return console.log(this.value);
+    // };
+
+    function handleUpdate() {
+      return console.log(this.value);
+    };
+
+    inputs.forEach(input => input.addEventListener("change", handleUpdate));
   </script>
 </body>
 
