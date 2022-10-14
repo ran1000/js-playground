@@ -1,19 +1,19 @@
 class Repository {
   constructor() {
     this.tasks = [];
-  };
+  }
 
   addTask(task) {
-    this.tasks.push(task);
-  };
+    return this.tasks.push(task);
+  }
 
   allTasks() {
-    this.tasks
-  };
+    return this.tasks;
+  }
 
   find(index) {
-    this.tasks[index];
-  };
+    return this.tasks[index];
+  }
 }
 
 module.exports = Repository;

@@ -26,4 +26,12 @@ class Controller {
   }
 }
 
+// This Class is now scoped to all the files requiring it
 module.exports = Controller;
+
+// export multiple variables
+// module.exports = {
+//   a,
+//   b,
+//   c
+// };

@@ -17,7 +17,6 @@ class Router {
       console.log("3 -  mark a task as done");
       console.log("4 -  quit the task manager");
       const { userRequest } = await prompt.get(['userRequest']);
-      console.dir(userRequest);
       switch (userRequest) {
         case "1":
           this.controller.createTask();
